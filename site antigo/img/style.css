@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f1f1f1;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(180deg, #1c0033, #0a0a0a);
+  padding: 60px 20px 40px;
+  text-align: center;
+  box-shadow: 0 0 20px #8000ff66;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeIn 2s ease-out;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #cc99ff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #140021;
+  padding: 10px 30px;
+  border-radius: 40px;
+  box-shadow: 0 0 25px #9f00ff66;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.divider {
+  width: 100px;
+  height: 4px;
+  background: #8000ff;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.content {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.progress-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.progress-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.progress-item span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00ff99;
+}
+
+.bar {
+  background-color: #1e1e1e;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 32px;
+  box-shadow: inset 0 0 10px #00ff91aa;
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00ff99, #00cc66);
+  text-align: right;
+  padding: 0 15px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 50px;
+  animation: fillBar 2s ease-in-out forwards;
+}
+
+footer {
+  margin-top: 80px;
+  padding: 25px 0;
+  background-color: #111;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  border-top: 1px solid #222;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fillBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 2rem;
+    padding: 8px 20px;
+  }
+  .logo span {
+    font-size: 1.5rem;
+  }
+  .progress-item span {
+    font-size: 1rem;
+  }
+  .fill {
+    font-size: 0.85rem;
+  }
+}

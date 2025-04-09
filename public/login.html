@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Rat Bot</title>
+  <link rel="stylesheet" href="styles/stylealu.css" />
+  <script src="scripts/auth.js" defer></script>
+</head>
+<body>
+  <audio id="boot-sound" src="boot.mp3" preload="auto"></audio>
+  <audio id="reload-sound" src="reload.mp3" preload="auto"></audio>
+
+  <div id="loader" class="loader-screen">
+    <div class="rat-loader">🐀</div>
+    <p>Carregando Rat Bot...</p>
+  </div>
+
+  <div id="main-content" style="display:none;">
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          🐭 <span>Rat Bot</span>
+        </div>
+        <div class="subtitle">Área de Login</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="login-container">
+        <form id="login-form">
+          <div class="input-field">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="input-field">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit" class="login-btn">Entrar</button>
+        </form>
+        <div class="error-message" id="error-message"></div>
+      </div>
+    </main>
+
+    <footer>
+      plurral.net.rat-bot
+    </footer>
+  </div>
+</body>
+</html>

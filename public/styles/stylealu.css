@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #0a0a0a;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  .loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 9999;
+  }
+  
+  .rat-loader {
+    font-size: 4rem;
+    animation: spinRat 2s linear infinite;
+  }
+  
+  .header-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .logo {
+    font-size: 3rem;
+    color: #cc99ff;
+  }
+  
+  .subtitle {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #aaa;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .input-field {
+    margin: 15px 0;
+    width: 300px;
+  }
+  
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00ff99; /* cor do texto do rótulo */
+  }
+  
+  .input-field input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #220033; /* cor da borda */
+    border-radius: 5px;
+    background-color: #1E1E1E; /* cor do fundo da caixa */
+    color: #f1f1f1; /* cor do texto */
+    transition: border-color 0.3s;
+  }
+  
+  .input-field input:focus {
+    border-color: #8000ff; /* cor da borda quando focado */
+    outline: none; /* remove o contorno padrão */
+  }
+  
+  .login-btn {
+    background-color: #220033;
+    color: #cc99ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #8000ff55;
+    transition: background 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #330055;
+    color: #fff;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  footer {
+    margin-top: 80px;
+    padding: 25px 0;
+    background-color: #111;
+    text-align: center;
+    color: #555;
+    font-size: 0.95rem;
+    border-top: 1px solid #222;
+  }
+  
+  @keyframes spinRat {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

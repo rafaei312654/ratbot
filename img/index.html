@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rat Bot</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body onload="playBootSound()">
+  <audio id="boot-sound" src="boot.mp3" preload="auto"></audio>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        🐭 <span>Rat Bot</span>
+      </div>
+      <div class="divider"></div>
+      <div class="subtitle">Rotella - Plural</div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="progress-section">
+      <div class="progress-item"><span>Matemática A</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Matemática B</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Química A</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Português 1</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Português 2</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Química B</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Física A</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Física B</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Inglês</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>História</span><div class="bar"><div class="fill">100%</div></div></div>
+      <div class="progress-item"><span>Geografia</span><div class="bar"><div class="fill">100%</div></div></div>
+    </section>
+  </main>
+
+  <footer>
+    plurral.net.rat-bot
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.progress-item').forEach(item => {
+      observer.observe(item);
+    });
+
+    function playBootSound() {
+      document.getElementById('boot-sound').play();
+    }
+  </script>
+</body>
+</html>
