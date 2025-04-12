@@ -2,7 +2,8 @@ const validUsers = [
   { username: 'rotella', password: 'ferot123', redirect: './img/index.html' },
   { username: 'jow', password: 'dinossauro123', redirect: './aluno.html' },
   { username: 'tadeu', password: 'tadano', redirect: './aluno2.html' },
-  { username: 'Polis', password: 'corno', redirect: './aluno3.html' },
+  { username: 'Polis', password: 'Corno321', redirect: './aluno3.html' },
+  { username: 'nat', password: 'ind1o', redirect: './aluno4.html' },
 ];
 
 // Evento que é executado após a página ser carregada
