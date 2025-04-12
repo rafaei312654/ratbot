@@ -17,7 +17,7 @@ window.onload = () => {
     const password = document.getElementById('password').value;
 
     try {
-      const response = await fetch('https://SEU-BACKEND.vercel.app/api/auth/login', {
+      const response = await fetch('https://login-api-jgp9.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
