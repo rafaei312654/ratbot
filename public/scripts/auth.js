@@ -1,45 +1,79 @@
-// auth.js 
-import axios from 'axios';
+const validUsers = [
+
+  { username: 'rotella', password: 'ferot123', redirect: './img/index.html' },
+
+  { username: 'jow', password: 'dinossauro123', redirect: './aluno.html' },
+
+  { username: 'tadeu', password: 'tadano', redirect: './aluno2.html' },
+
+  { username: 'Polis', password: 'Corno321', redirect: './aluno3.html' },
+
+  { username: 'nat', password: 'ind1o', redirect: './aluno4.html' },
+
+];
+
+
+
+// Evento que é executado após a página ser carregada
 
 window.onload = () => {
-  const loader = document.getElementById('loader');
-  const mainContent = document.getElementById('main-content');
 
-  setTimeout(() => {
-    loader.style.display = 'none';
-    mainContent.style.display = 'block';
-  }, 2000);
+  const loader = document.getElementById('loader');
 
-  const loginForm = document.getElementById('login-form');
-  const errorMessage = document.getElementById('error-message');
+  const mainContent = document.getElementById('main-content');
 
-  loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
 
-    try {
-      
-      const response = await axios.post('/login', {
-        username: username, 
-        senha: password,   
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
 
-      const data = response.data;
+  setTimeout(() => {
 
-      if (data.success) {
-        errorMessage.textContent = 'Login bem-sucedido!';
-        window.location.href = data.redirect; // Redireciona o navegador para a URL fornecida pelo backend.
-      } else {
-        errorMessage.textContent = data.message || 'Usuário ou senha incorretos.';
-      }
-    } catch (error) {
-      console.error('Erro durante o login:', error);
-      errorMessage.textContent = 'Erro ao tentar fazer login.';
-    }
-  });
+    loader.style.display = 'none';
+
+    mainContent.style.display = 'block';
+
+  }, 2000);
+
+
+
+
+
+  const loginForm = document.getElementById('login-form');
+
+  const errorMessage = document.getElementById('error-message');
+
+
+
+  // Adiciona um evento para tratar o envio do formulário
+
+  loginForm.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+
+
+    const username = document.getElementById('username').value; // Captura o nome de usuário
+
+    const password = document.getElementById('password').value; // Captura a senha
+
+
+
+    // Verifica se o usuário é válido
+
+    const user = validUsers.find(user => user.username === username && user.password === password);
+
+   
+
+    if (user) {
+
+      errorMessage.textContent = 'Login bem-sucedido!';
+
+      window.location.href = user.redirect;
+
+    } else {
+
+      errorMessage.textContent = 'Usuário ou senha incorretos.';
+
+    }
+
+  });
+
 };
