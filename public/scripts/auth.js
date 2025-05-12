@@ -8,7 +8,7 @@ const validUsers = [
 
   { username: 'Polis', password: 'Corno321', redirect: './aluno3.html' },
 
-  { username: 'nat', password: 'ind1o', redirect: './aluno4.html' },
+  { username: 'Silas', password: '1ndio', redirect: './aluno4.html' },
 
 ];
 
