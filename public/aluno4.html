@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rat Bot</title>
+  <link rel="stylesheet" href="styles/padrão.css"/>
+</head>
+<body onload="playBootSound()">
+  <audio id="boot-sound" src="boot.mp3" preload="auto"></audio>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        🐭 <span>Rat Bot</span>
+      </div>
+      <div class="divider"></div>
+      <div class="subtitle">Davi Silas - Plural</div>
+    </div>
+  </header>
+
+  <main class="content">
+    <h2 style="text-align: center; margin: 20px 0;">Caderno 2 - TC online</h2>
+
+    <section class="progress-section">
+      <div class="barra-vermelha"><span>Matemática </span><div class="amar"><div class="fillamar">20%</div></div></div>
+      <div class="barra-vermelha"><span>Ciencias A</span><div class="amar"><div class="fillamar">20%</div></div></div>
+      <div class="barra-vermelha"><span>Ciencias B</span><div class="amar"><div class="fillamar">20%</div></div></div>
+      <div class="barra-vermelha"><span>Português</span><div class="amar"><div class="fillamar">20%</div></div></div>
+      <div class="barra-vermelha"><span>História</span><div class="amar"><div class="fillamar">20%</div></div></div>
+      <div class="barra-vermelha"><span>Geografia</span><div class="amar"><div class="fillamar">20%</div></div></div>
+
+    </section>
+  </main>
+
+  <footer>
+    plurral.net.rat-bot
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.progress-item').forEach(item => {
+      observer.observe(item);
+    });
+
+    function playBootSound() {
+      document.getElementById('boot-sound').play();
+    }
+  </script>
+</body>
+</html>
 
