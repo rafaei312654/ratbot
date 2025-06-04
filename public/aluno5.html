@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rat Bot</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body onload="playBootSound()">
+  <audio id="boot-sound" src="boot.mp3" preload="auto"></audio>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        🐭 <span>Rat Bot</span>
+      </div>
+      <div class="divider"></div>
+      <div class="subtitle">Olavo - Plural</div>
+    </div>
+  </header>
+
+  <main class="content">
+    <h3 style="text-align: center; margin: 20px 0;">Apostila 6</h3>
+    <section class="progress-section">
+      <div class="barra-vermelha"><span>Matemática A</span><div class="red"><div class="fillred">45%</div></div></div>
+      <div class="barra-vermelha"><span>Matemática B</span><div class="amar"><div class="fillamar">20%</div></div></div>
+      <div class="barra-vermelha"><span>Química A</span><div class="amar"><div class="fillgreen">100%</div></div></div>
+      <div class="barra-vermelha"><span>Química B</span><div class="amar"><div class="fillamar">60%</div></div></div>
+      <div class="barra-vermelha"><span>Física A</span><div class="bargreen"><div class="fillgreen">100%</div></div></div>
+      <div class="barra-vermelha"><span>Física B</span><div class="amar"><div class="fillamar">40%</div></div></div>
+      <div class="barra-vermelha"><span>Inglês</span><div class="amar"><div class="fillamar">75%</div></div></div>
+  
+    </section>
+  </main>
+
+  <footer>
+    plurral.net.rat-bot
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.progress-item').forEach(item => {
+      observer.observe(item);
+    });
+
+    function playBootSound() {
+      document.getElementById('boot-sound').play();
+    }
+  </script>
+</body>
+</html>
