@@ -10,6 +10,8 @@ const validUsers = [
 
   { username: 'Silas', password: '1ndio', redirect: './aluno4.html' },
 
+  { username: 'olavo', password: 'ares', redirect: './aluno5.html' },
+
 ];
 
 
